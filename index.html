@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polaris Academy - Programmer & Coder</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div style="position: relative;">
+      <img src="logo.png" alt="Your Image" style="position: absolute; top: -50px; right: 2px; width: 250px; height: auto;">
+    <div class="container">
+      <h1>Polaris Academy</h1>
+      <p>Programmer | Coder | Tech Enthusiast</p>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Courses</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 style="color: #ffffff;">About Me</h2>
+      <p style="color: white;">Diana Aziz is a web and mobile app developer with extensive experience in a variety of modern technologies, including:</p>
+
+    <ul style="color: white;">
+        <li><strong>HTML and CSS:</strong> Diana has advanced skills in designing and developing user interfaces using HTML and CSS, enabling her to create attractive and user-friendly websites.</li>
+        <li><strong>JavaScript:</strong> Diana is proficient in JavaScript, allowing her to add interactivity and advanced functionality to websites and web applications.</li>
+        <li><strong>Flutter:</strong> She has experience in developing cross-platform mobile applications using Flutter, enabling her to create applications that run smoothly on iOS and Android operating systems.</li>
+    </ul>
+
+    <p style="color: white;">In general, Diana Aziz is a highly skilled and versatile programmer, capable of developing integrated software solutions that meet user needs.</p>
+
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Flutter</li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Courses</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Web development</h3>
+          <p>Become a Front-End Web Developer by completing a variety of projects for your portfolio - become an HTML, CSS and JavaScript pro!<br>6 lessons<br>Price: 850</p>
+          <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn">Apply now</a>
+        </div>
+        <div class="project-card">
+          <h3>Python</h3>
+          <p>Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!<br>6 lessons<br>Price: 750</p>
+          <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn">Apply now</a>
+        </div>
+        <div class="project-card">
+          <h3>Artificial Intelligence (AI) Courses</h3>
+          <p>AI courses teach machine simulation of human intelligence processes. Exploring AI is crucial for building smart systems and applications and is important for developers, researchers, and anyone interested in cutting-edge technology.<br>6 lessons<br>Price: 650</p>
+          <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn">Apply now</a>
+        </div>
+        <div class="project-card">
+          <h3>Scratch</h3>
+          <p>Scratch is a visual programming language where you drag and drop code blocks to create interactive stories, games, and animations. It's designed to teach coding basics and computational thinking in a fun, accessible way. Scratch courses typically cover the interface, core programming concepts like loops and conditionals, and project creation, fostering creativity and problem-solving skills.<br>6 lessons<br>Price: 650</p>
+          <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn">Apply now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Polaris Academy. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    let position = 0;
+    const speed = 0.4;
+    const viewportHeight = window.innerHeight; 
+
+    function moveBackground() {
+      position += speed;
+      if (position >= viewportHeight) {
+        position = 0; // Reset to top
+      }
+      document.body.style.backgroundPositionY = position + 'px';
+      requestAnimationFrame(moveBackground);
+    }
+
+    moveBackground();
+  </script>
+</body>
+</html>
