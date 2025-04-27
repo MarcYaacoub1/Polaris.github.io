@@ -7,6 +7,45 @@
     <link rel="shortcut icon" href="P.png" type="image/x-icon">
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Add this to your existing CSS */
+        .language-selector {
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .language-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: "Boldonse", sans-serif;
+            font-size: 14px;
+        }
+        
+        .language-btn:hover {
+            background: #28a745;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .language-btn.active {
+            background: #28a745;
+            font-weight: bold;
+        }
+        
+        .language-btn img {
+            vertical-align: middle;
+            margin-right: 5px;
+            width: 20px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -24,6 +63,17 @@
                 <div class="container">
                     <h1>Polaris Academy</h1>
                     <p>Programmer | Coder | Tech Enthusiast</p>
+                    <div class="language-selector">
+                        <button class="language-btn active" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English"> English
+                        </button>
+                        <button class="language-btn" data-lang="fr">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français"> Français
+                        </button>
+                        <button class="language-btn" data-lang="ar">
+                            <img src="https://flagcdn.com/w20/eg.png" alt="عربي"> عربي
+                        </button>
+                    </div>
                     <nav>
                         <ul>
                             <li><a href="#about">About</a></li>
@@ -35,57 +85,58 @@
             </div>
         </header>
 
+        <!-- Rest of your HTML content remains the same -->
         <section id="about" class="section">
             <div class="container">
                 <h2 style="color: #ffffff;">About Me</h2>
-                <p style="color: white;">Diana Aziz is a web and mobile app developer with extensive experience in a variety of modern technologies, including:</p>
+                <p style="color: white;" class="translatable" data-key="about1">Diana Aziz is a web and mobile app developer with extensive experience in a variety of modern technologies, including:</p>
 
                 <ul style="color: white;">
-                    <li><strong>HTML and CSS:</strong> Diana has advanced skills in designing and developing user interfaces using HTML and CSS, enabling her to create attractive and user-friendly websites.</li>
-                    <li><strong>JavaScript:</strong> Diana is proficient in JavaScript, allowing her to add interactivity and advanced functionality to websites and web applications.</li>
-                    <li><strong>Flutter:</strong> She has experience in developing cross-platform mobile applications using Flutter, enabling her to create applications that run smoothly on iOS and Android operating systems.</li>
+                    <li class="translatable" data-key="skill1"><strong>HTML and CSS:</strong> Diana has advanced skills in designing and developing user interfaces using HTML and CSS, enabling her to create attractive and user-friendly websites.</li>
+                    <li class="translatable" data-key="skill2"><strong>JavaScript:</strong> Diana is proficient in JavaScript, allowing her to add interactivity and advanced functionality to websites and web applications.</li>
+                    <li class="translatable" data-key="skill3"><strong>Flutter:</strong> She has experience in developing cross-platform mobile applications using Flutter, enabling her to create applications that run smoothly on iOS and Android operating systems.</li>
                 </ul>
 
-                <p style="color: white;">In general, Diana Aziz is a highly skilled and versatile programmer, capable of developing integrated software solutions that meet user needs.</p>
+                <p style="color: white;" class="translatable" data-key="about2">In general, Diana Aziz is a highly skilled and versatile programmer, capable of developing integrated software solutions that meet user needs.</p>
             </div>
         </section>
 
         <section id="skills" class="section">
             <div class="container">
-                <h2>Skills</h2>
+                <h2 class="translatable" data-key="skills">Skills</h2>
                 <ul>
-                    <li>Python</li>
-                    <li>JavaScript</li>
+                    <li class="translatable" data-key="python">Python</li>
+                    <li class="translatable" data-key="javascript">JavaScript</li>
                     <li>HTML</li>
                     <li>CSS</li>
-                    <li>Flutter</li>
+                    <li class="translatable" data-key="flutter">Flutter</li>
                 </ul>
             </div>
         </section>
 
         <section id="projects" class="section">
             <div class="container">
-                <h2>Courses</h2>
+                <h2 class="translatable" data-key="courses">Courses</h2>
                 <div class="project-grid">
                     <div class="project-card">
-                        <h3>Web development</h3>
-                        <p>Become a Front-End Web Developer by completing a variety of projects for your portfolio - become an HTML, CSS and JavaScript pro!<br>6 lessons per month<br>Price: 850</p>
-                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn">Apply now</a>
+                        <h3 class="translatable" data-key="webdev">Web development</h3>
+                        <p class="translatable" data-key="webdesc">Become a Front-End Web Developer by completing a variety of projects for your portfolio - become an HTML, CSS and JavaScript pro!<br>6 lessons per month<br>Price: 850</p>
+                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
                     </div>
                     <div class="project-card">
-                        <h3>Python</h3>
-                        <p>Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!<br>6 lessons per month<br>Price: 750</p>
-                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn">Apply now</a>
+                        <h3 class="translatable" data-key="pythoncourse">Python</h3>
+                        <p class="translatable" data-key="pydesc">Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!<br>6 lessons per month<br>Price: 750</p>
+                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
                     </div>
                     <div class="project-card">
-                        <h3>Artificial Intelligence (AI) Courses</h3>
-                        <p>AI courses teach machine simulation of human intelligence processes. Exploring AI is crucial for building smart systems and applications and is important for developers, researchers, and anyone interested in cutting-edge technology.<br>6 lessons per month<br>Price: 650</p>
-                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn">Apply now</a>
+                        <h3 class="translatable" data-key="aicourse">Artificial Intelligence (AI) Courses</h3>
+                        <p class="translatable" data-key="aidesc">AI courses teach machine simulation of human intelligence processes. Exploring AI is crucial for building smart systems and applications and is important for developers, researchers, and anyone interested in cutting-edge technology.<br>6 lessons per month<br>Price: 650</p>
+                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
                     </div>
                     <div class="project-card">
-                        <h3>Scratch</h3>
-                        <p>Scratch is a visual programming language where you drag and drop code blocks to create interactive stories, games, and animations. It's designed to teach coding basics and computational thinking in a fun, accessible way. Scratch courses typically cover the interface, core programming concepts like loops and conditionals, and project creation, fostering creativity and problem-solving skills.<br>6 lessons per month<br>Price: 650</p>
-                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn">Apply now</a>
+                        <h3 class="translatable" data-key="scratch">Scratch</h3>
+                        <p class="translatable" data-key="scratchdesc">Scratch is a visual programming language where you drag and drop code blocks to create interactive stories, games, and animations. It's designed to teach coding basics and computational thinking in a fun, accessible way. Scratch courses typically cover the interface, core programming concepts like loops and conditionals, and project creation, fostering creativity and problem-solving skills.<br>6 lessons per month<br>Price: 650</p>
+                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
                     </div>
                 </div>
             </div>
@@ -106,8 +157,115 @@
         video.addEventListener('ended', () => {
             videoContainer.style.display = 'none';
             content.style.display = 'block';
-            document.body.style.overflow = 'auto'; // Re-enable scrollbars
+            document.body.style.overflow = 'auto';
         });
+
+        // Translation functionality
+        const translations = {
+            en: {
+                about1: "Diana Aziz is a web and mobile app developer with extensive experience in a variety of modern technologies, including:",
+                skill1: "HTML and CSS: Diana has advanced skills in designing and developing user interfaces using HTML and CSS, enabling her to create attractive and user-friendly websites.",
+                skill2: "JavaScript: Diana is proficient in JavaScript, allowing her to add interactivity and advanced functionality to websites and web applications.",
+                skill3: "Flutter: She has experience in developing cross-platform mobile applications using Flutter, enabling her to create applications that run smoothly on iOS and Android operating systems.",
+                about2: "In general, Diana Aziz is a highly skilled and versatile programmer, capable of developing integrated software solutions that meet user needs.",
+                skills: "Skills",
+                python: "Python",
+                javascript: "JavaScript",
+                flutter: "Flutter",
+                courses: "Courses",
+                webdev: "Web development",
+                webdesc: "Become a Front-End Web Developer by completing a variety of projects for your portfolio - become an HTML, CSS and JavaScript pro!<br>6 lessons per month<br>Price: 850",
+                pythoncourse: "Python",
+                pydesc: "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!<br>6 lessons per month<br>Price: 750",
+                aicourse: "Artificial Intelligence (AI) Courses",
+                aidesc: "AI courses teach machine simulation of human intelligence processes. Exploring AI is crucial for building smart systems and applications and is important for developers, researchers, and anyone interested in cutting-edge technology.<br>6 lessons per month<br>Price: 650",
+                scratch: "Scratch",
+                scratchdesc: "Scratch is a visual programming language where you drag and drop code blocks to create interactive stories, games, and animations. It's designed to teach coding basics and computational thinking in a fun, accessible way. Scratch courses typically cover the interface, core programming concepts like loops and conditionals, and project creation, fostering creativity and problem-solving skills.<br>6 lessons per month<br>Price: 650",
+                apply: "Apply now"
+            },
+            fr: {
+                about1: "Diana Aziz est une développeuse d'applications web et mobiles avec une vaste expérience dans une variété de technologies modernes, notamment :",
+                skill1: "HTML et CSS : Diana possède des compétences avancées en conception et développement d'interfaces utilisateur utilisant HTML et CSS, lui permettant de créer des sites web attrayants et conviviaux.",
+                skill2: "JavaScript : Diana maîtrise JavaScript, ce qui lui permet d'ajouter de l'interactivité et des fonctionnalités avancées aux sites web et applications web.",
+                skill3: "Flutter : Elle a de l'expérience dans le développement d'applications mobiles multiplateformes utilisant Flutter, lui permettant de créer des applications qui fonctionnent parfaitement sur les systèmes d'exploitation iOS et Android.",
+                about2: "En général, Diana Aziz est une programmeuse hautement qualifiée et polyvalente, capable de développer des solutions logicielles intégrées qui répondent aux besoins des utilisateurs.",
+                skills: "Compétences",
+                python: "Python",
+                javascript: "JavaScript",
+                flutter: "Flutter",
+                courses: "Cours",
+                webdev: "Développement web",
+                webdesc: "Devenez un développeur web Front-End en réalisant divers projets pour votre portfolio - devenez un pro du HTML, CSS et JavaScript !<br>6 leçons par mois<br>Prix : 850",
+                pythoncourse: "Python",
+                pydesc: "Apprenez tout sur Python de A à Z, des bases aux sujets avancés comme l'interface graphique Python, l'analyse de données Python, et plus encore !<br>6 leçons par mois<br>Prix : 750",
+                aicourse: "Cours d'Intelligence Artificielle (IA)",
+                aidesc: "Les cours d'IA enseignent la simulation par machine des processus d'intelligence humaine. Explorer l'IA est crucial pour construire des systèmes et applications intelligents et est important pour les développeurs, chercheurs et toute personne intéressée par les technologies de pointe.<br>6 leçons par mois<br>Prix : 650",
+                scratch: "Scratch",
+                scratchdesc: "Scratch est un langage de programmation visuel où vous glissez-déposez des blocs de code pour créer des histoires interactives, des jeux et des animations. Il est conçu pour enseigner les bases de la programmation et la pensée informatique de manière ludique et accessible. Les cours Scratch couvrent généralement l'interface, les concepts de programmation de base comme les boucles et les conditions, et la création de projets, favorisant la créativité et les compétences en résolution de problèmes.<br>6 leçons par mois<br>Prix : 650",
+                apply: "Postuler maintenant"
+            },
+            ar: {
+                about1: "ديانا عزيز هي مطورة تطبيقات الويب والهواتف المحمولة مع خبرة واسعة في مجموعة متنوعة من التقنيات الحديثة، بما في ذلك:",
+                skill1: "HTML و CSS: تمتلك ديانا مهارات متقدمة في تصميم وتطوير واجهات المستخدم باستخدام HTML و CSS، مما يمكنها من إنشاء مواقع ويب جذابة وسهلة الاستخدام.",
+                skill2: "JavaScript: ديانا بارعة في JavaScript، مما يسمح لها بإضافة التفاعل والوظائف المتقدمة إلى مواقع الويب وتطبيقات الويب.",
+                skill3: "Flutter: لديها خبرة في تطوير تطبيقات الهاتف المحمول متعددة المنصات باستخدام Flutter، مما يمكنها من إنشاء تطبيقات تعمل بسلاسة على أنظمة التشغيل iOS و Android.",
+                about2: "بشكل عام، ديانا عزيز هي مبرمجة ماهرة ومتعددة الاستخدامات، قادرة على تطوير حلول برمجية متكاملة تلبي احتياجات المستخدمين.",
+                skills: "المهارات",
+                python: "بايثون",
+                javascript: "جافا سكريبت",
+                flutter: "فلاتر",
+                courses: "الدورات",
+                webdev: "تطوير الويب",
+                webdesc: "كن مطور ويب Front-End من خلال إكمال مجموعة متنوعة من المشاريع لملفك الشخصي - كن محترفًا في HTML و CSS و JavaScript!<br>6 دروس شهريًا<br>السعر: 850",
+                pythoncourse: "بايثون",
+                pydesc: "تعلم كل شيء عن بايثون من الألف إلى الياء، من الأساسيات إلى الموضوعات المتقدمة مثل واجهة المستخدم الرسومية لبايثون، تحليل البيانات بايثون، والمزيد!<br>6 دروس شهريًا<br>السعر: 750",
+                aicourse: "دورات الذكاء الاصطناعي (AI)",
+                aidesc: "تعلم دورات الذكاء الاصطناعي محاكاة الآلة لعمليات الذكاء البشري. يعد استكشاف الذكاء الاصطناعي أمرًا بالغ الأهمية لبناء أنظمة وتطبيقات ذكية وهو مهم للمطورين والباحثين وأي شخص مهتم بالتكنولوجيا المتطورة.<br>6 دروس شهريًا<br>السعر: 650",
+                scratch: "سكراتش",
+                scratchdesc: "سكراتش هو لغة برمجة مرئية حيث تقوم بسحب وإسقاط كتل الكود لإنشاء قصص تفاعلية وألعاب ورسوم متحركة. تم تصميمه لتعليم أساسيات البرمجة والتفكير الحسابي بطريقة ممتعة وسهلة. تغطي دورات سكراتش عادةً الواجهة، ومفاهيم البرمجة الأساسية مثل الحلقات والشروط، وإنشاء المشاريع، وتعزيز الإبداع ومهارات حل المشكلات.<br>6 دروس شهريًا<br>السعر: 650",
+                apply: "قدم الآن"
+            }
+        };
+
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.language-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Translate page
+                const lang = this.getAttribute('data-lang');
+                translatePage(lang);
+            });
+            
+            // Add hover effects
+            btn.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('active')) {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+                }
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('active')) {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                }
+            });
+        });
+
+        function translatePage(lang) {
+            document.querySelectorAll('.translatable').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        }
     </script>
 </body>
 </html>
