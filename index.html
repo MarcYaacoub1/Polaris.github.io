@@ -13,7 +13,7 @@
             margin: 15px 0;
             text-align: center;
         }
-        
+       
         .language-btn {
             display: inline-block;
             padding: 8px 15px;
@@ -27,23 +27,33 @@
             font-family: "Boldonse", sans-serif;
             font-size: 14px;
         }
-        
+       
         .language-btn:hover {
             background: #28a745;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
+       
         .language-btn.active {
             background: #28a745;
             font-weight: bold;
         }
-        
+       
         .language-btn img {
             vertical-align: middle;
             margin-right: 5px;
             width: 20px;
             height: auto;
+        }
+        
+        /* RTL support for Arabic */
+        [dir="rtl"] {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        [dir="rtl"] .project-grid {
+            direction: ltr; /* Keep grid LTR even in RTL mode */
         }
     </style>
 </head>
@@ -61,40 +71,39 @@
             <div style="position: relative;">
                 <img src="logo.png" alt="Your Image" style="position: absolute; top: -50px; right: 2px; width: 150px; height: auto;">
                 <div class="container">
-                    <h1>Polaris Academy</h1>
-                    <p>Programmer | Coder | Tech Enthusiast</p>
+                    <h1 class="translatable" data-key="title">Polaris Academy</h1>
+                    <p class="translatable" data-key="subtitle">Programmer | Coder | Tech Enthusiast</p>
                     <div class="language-selector">
                         <button class="language-btn active" data-lang="en">
-                            <img src="https://flagcdn.com/w20/gb.png" alt="English"> English
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English"> <span class="translatable" data-key="english">English</span>
                         </button>
                         <button class="language-btn" data-lang="fr">
-                            <img src="https://flagcdn.com/w20/fr.png" alt="Français"> Français
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français"> <span class="translatable" data-key="french">Français</span>
                         </button>
                         <button class="language-btn" data-lang="ar">
-                            <img src="https://flagcdn.com/w20/eg.png" alt="عربي"> عربي
+                            <img src="https://flagcdn.com/w20/eg.png" alt="عربي"> <span class="translatable" data-key="arabic">عربي</span>
                         </button>
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#projects">Courses</a></li>
+                            <li><a href="#about" class="translatable" data-key="about_nav">About</a></li>
+                            <li><a href="#skills" class="translatable" data-key="skills_nav">Skills</a></li>
+                            <li><a href="#projects" class="translatable" data-key="courses_nav">Courses</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </header>
 
-        <!-- Rest of your HTML content remains the same -->
         <section id="about" class="section">
             <div class="container">
-                <h2 style="color: #ffffff;">About Me</h2>
-                <p style="color: white;" class="translatable" data-key="about1">Marc Yaacoub a web and mobile app developer with extensive experience in a variety of modern technologies, including:</p>
+                <h2 style="color: #ffffff;" class="translatable" data-key="about_me">About Me</h2>
+                <p style="color: white;" class="translatable" data-key="about1">Marc Yaacoub is a web and mobile app developer with extensive experience in a variety of modern technologies, including:</p>
 
                 <ul style="color: white;">
-                    <li class="translatable" data-key="skill1"><strong>HTML and CSS:</strong> Marc Yaacoub advanced skills in designing and developing user interfaces using HTML and CSS, enabling her to create attractive and user-friendly websites.</li>
-                    <li class="translatable" data-key="skill2"><strong>JavaScript:</strong> Marc Yaacoub proficient in JavaScript, allowing her to add interactivity and advanced functionality to websites and web applications.</li>
-                    <li class="translatable" data-key="skill3"><strong>Flutter:</strong> She has experience in developing cross-platform mobile applications using Flutter, enabling her to create applications that run smoothly on iOS and Android operating systems.</li>
+                    <li class="translatable" data-key="skill1"><strong class="translatable" data-key="htmlcss">HTML and CSS:</strong> <span class="translatable" data-key="skill1_text">Marc has advanced skills in designing and developing user interfaces using HTML and CSS, enabling her to create attractive and user-friendly websites.</span></li>
+                    <li class="translatable" data-key="skill2"><strong class="translatable" data-key="javascript">JavaScript:</strong> <span class="translatable" data-key="skill2_text">Marc is proficient in JavaScript, allowing her to add interactivity and advanced functionality to websites and web applications.</span></li>
+                    <li class="translatable" data-key="skill3"><strong class="translatable" data-key="flutter">Flutter:</strong> <span class="translatable" data-key="skill3_text">She has experience in developing cross-platform mobile applications using Flutter, enabling her to create applications that run smoothly on iOS and Android operating systems.</span></li>
                 </ul>
 
                 <p style="color: white;" class="translatable" data-key="about2">In general, Marc Yaacoub is a highly skilled and versatile programmer, capable of developing integrated software solutions that meet user needs.</p>
@@ -107,8 +116,8 @@
                 <ul>
                     <li class="translatable" data-key="python">Python</li>
                     <li class="translatable" data-key="javascript">JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
+                    <li class="translatable" data-key="html">HTML</li>
+                    <li class="translatable" data-key="css">CSS</li>
                     <li class="translatable" data-key="flutter">Flutter</li>
                 </ul>
             </div>
@@ -120,12 +129,12 @@
                 <div class="project-grid">
                     <div class="project-card">
                         <h3 class="translatable" data-key="webdev">Web development</h3>
-                        <p class="translatable" data-key="webdesc">Become a Front-End Web Developer by completing a variety of projects for your portfolio - become an HTML, CSS and JavaScript pro!<br>6 lessons per month<br>Price: 850</p>
+                        <p class="translatable" data-key="webdesc">Become a Front-End Web Developer by completing a variety of projects for your portfolio - become an HTML, CSS and JavaScript pro!<br>6 lessons per month<br>Price: 1000</p>
                         <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
                     </div>
                     <div class="project-card">
                         <h3 class="translatable" data-key="pythoncourse">Python</h3>
-                        <p class="translatable" data-key="pydesc">Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!<br>6 lessons per month<br>Price: 750</p>
+                        <p class="translatable" data-key="pydesc">Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!<br>6 lessons per month<br>Price: 850</p>
                         <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
                     </div>
                     <div class="project-card">
@@ -135,7 +144,17 @@
                     </div>
                     <div class="project-card">
                         <h3 class="translatable" data-key="scratch">Scratch</h3>
-                        <p class="translatable" data-key="scratchdesc">Scratch is a visual programming language where you drag and drop code blocks to create interactive stories, games, and animations. It's designed to teach coding basics and computational thinking in a fun, accessible way. Scratch courses typically cover the interface, core programming concepts like loops and conditionals, and project creation, fostering creativity and problem-solving skills.<br>6 lessons per month<br>Price: 650</p>
+                        <p class="translatable" data-key="scratchdesc">Scratch is a visual programming language where you drag and drop code blocks to create interactive stories, games, and animations. It's designed to teach coding basics and computational thinking in a fun, accessible way. Scratch courses typically cover the interface, core programming concepts like loops and conditionals, and project creation, fostering creativity and problem-solving skills.<br>6 lessons per month<br>Price: 750</p>
+                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="translatable" data-key="thunkable">Thunkable</h3>
+                        <p class="translatable" data-key="thunkabledesc">Thunkable is a no-code platform that allows users to create native mobile applications for both Android and iOS, as well as web apps, without writing any code. It utilizes a drag-and-drop interface where users can visually assemble app components and define their logic using a block-based programming system, similar to Scratch.<br>6 lessons per month<br>Price: 800</p>
+                        <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="translatable" data-key="blockly">Blockly</h3>
+                        <p class="translatable" data-key="blocklydesc">Blockly Games is a series of free, educational games designed by Google to teach computer programming principles through a visual, block-based programming language called Blockly. It's specifically aimed at beginners, including children, who have no prior coding experience.<br>6 lessons per month<br>Price: 700</p>
                         <a href="https://forms.zohopublic.com/saintmarc855gm1/form/WebdevelopmentForm/formperma/YFmFKndDu9OG58LtyqfvpJyqFAq8RfEKjyuXVHURen4" class="btn translatable" data-key="apply">Apply now</a>
                     </div>
                 </div>
@@ -144,7 +163,7 @@
 
         <footer>
             <div class="container">
-                <p>&copy; 2025 Polaris Academy. All rights reserved.</p>
+                <p class="translatable" data-key="copyright">&copy; 2025 Polaris Academy. All rights reserved.</p>
             </div>
         </footer>
     </div>
@@ -163,67 +182,124 @@
         // Translation functionality
         const translations = {
             en: {
+                title: "Polaris Academy",
+                subtitle: "Programmer | Coder | Tech Enthusiast",
+                english: "English",
+                french: "Français",
+                arabic: "عربي",
+                about_nav: "About",
+                skills_nav: "Skills",
+                courses_nav: "Courses",
+                about_me: "About Me",
                 about1: "Marc Yaacoub is a web and mobile app developer with extensive experience in a variety of modern technologies, including:",
-                skill1: "HTML and CSS: Marc has advanced skills in designing and developing user interfaces using HTML and CSS, enabling her to create attractive and user-friendly websites.",
-                skill2: "JavaScript: Marc is proficient in JavaScript, allowing her to add interactivity and advanced functionality to websites and web applications.",
-                skill3: "Flutter: She has experience in developing cross-platform mobile applications using Flutter, enabling her to create applications that run smoothly on iOS and Android operating systems.",
+                htmlcss: "HTML and CSS:",
+                skill1_text: "Marc has advanced skills in designing and developing user interfaces using HTML and CSS, enabling her to create attractive and user-friendly websites.",
+                javascript: "JavaScript:",
+                skill2_text: "Marc is proficient in JavaScript, allowing her to add interactivity and advanced functionality to websites and web applications.",
+                flutter: "Flutter:",
+                skill3_text: "She has experience in developing cross-platform mobile applications using Flutter, enabling her to create applications that run smoothly on iOS and Android operating systems.",
                 about2: "In general, Marc Yaacoub is a highly skilled and versatile programmer, capable of developing integrated software solutions that meet user needs.",
                 skills: "Skills",
                 python: "Python",
                 javascript: "JavaScript",
+                html: "HTML",
+                css: "CSS",
                 flutter: "Flutter",
                 courses: "Courses",
                 webdev: "Web development",
-                webdesc: "Become a Front-End Web Developer by completing a variety of projects for your portfolio - become an HTML, CSS and JavaScript pro!<br>6 lessons per month<br>Price: 850",
+                webdesc: "Become a Front-End Web Developer by completing a variety of projects for your portfolio - become an HTML, CSS and JavaScript pro!<br>6 lessons per month<br>Price: 1000",
                 pythoncourse: "Python",
-                pydesc: "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!<br>6 lessons per month<br>Price: 750",
+                pydesc: "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!<br>6 lessons per month<br>Price: 850",
                 aicourse: "Artificial Intelligence (AI) Courses",
                 aidesc: "AI courses teach machine simulation of human intelligence processes. Exploring AI is crucial for building smart systems and applications and is important for developers, researchers, and anyone interested in cutting-edge technology.<br>6 lessons per month<br>Price: 650",
                 scratch: "Scratch",
-                scratchdesc: "Scratch is a visual programming language where you drag and drop code blocks to create interactive stories, games, and animations. It's designed to teach coding basics and computational thinking in a fun, accessible way. Scratch courses typically cover the interface, core programming concepts like loops and conditionals, and project creation, fostering creativity and problem-solving skills.<br>6 lessons per month<br>Price: 650",
-                apply: "Apply now"
+                scratchdesc: "Scratch is a visual programming language where you drag and drop code blocks to create interactive stories, games, and animations. It's designed to teach coding basics and computational thinking in a fun, accessible way. Scratch courses typically cover the interface, core programming concepts like loops and conditionals, and project creation, fostering creativity and problem-solving skills.<br>6 lessons per month<br>Price: 750",
+                thunkable: "Thunkable",
+                thunkabledesc: "Thunkable is a no-code platform that allows users to create native mobile applications for both Android and iOS, as well as web apps, without writing any code. It utilizes a drag-and-drop interface where users can visually assemble app components and define their logic using a block-based programming system, similar to Scratch.<br>6 lessons per month<br>Price: 800",
+                blockly: "Blockly",
+                blocklydesc: "Blockly Games is a series of free, educational games designed by Google to teach computer programming principles through a visual, block-based programming language called Blockly. It's specifically aimed at beginners, including children, who have no prior coding experience.<br>6 lessons per month<br>Price: 700",
+                apply: "Apply now",
+                copyright: "© 2025 Polaris Academy. All rights reserved."
             },
             fr: {
+                title: "Académie Polaris",
+                subtitle: "Programmeur | Codeur | Passionné de technologie",
+                english: "Anglais",
+                french: "Français",
+                arabic: "Arabe",
+                about_nav: "À propos",
+                skills_nav: "Compétences",
+                courses_nav: "Cours",
+                about_me: "À propos de moi",
                 about1: "Marc Yaacoub est une développeuse d'applications web et mobiles avec une vaste expérience dans une variété de technologies modernes, notamment :",
-                skill1: "HTML et CSS : Marc possède des compétences avancées en conception et développement d'interfaces utilisateur utilisant HTML et CSS, lui permettant de créer des sites web attrayants et conviviaux.",
-                skill2: "JavaScript : Marc maîtrise JavaScript, ce qui lui permet d'ajouter de l'interactivité et des fonctionnalités avancées aux sites web et applications web.",
-                skill3: "Flutter : Elle a de l'expérience dans le développement d'applications mobiles multiplateformes utilisant Flutter, lui permettant de créer des applications qui fonctionnent parfaitement sur les systèmes d'exploitation iOS et Android.",
+                htmlcss: "HTML et CSS :",
+                skill1_text: "Marc possède des compétences avancées en conception et développement d'interfaces utilisateur utilisant HTML et CSS, lui permettant de créer des sites web attrayants et conviviaux.",
+                javascript: "JavaScript :",
+                skill2_text: "Marc maîtrise JavaScript, ce qui lui permet d'ajouter de l'interactivité et des fonctionnalités avancées aux sites web et applications web.",
+                flutter: "Flutter :",
+                skill3_text: "Elle a de l'expérience dans le développement d'applications mobiles multiplateformes utilisant Flutter, lui permettant de créer des applications qui fonctionnent parfaitement sur les systèmes d'exploitation iOS et Android.",
                 about2: "En général, Marc Yaacoub est une programmeuse hautement qualifiée et polyvalente, capable de développer des solutions logicielles intégrées qui répondent aux besoins des utilisateurs.",
                 skills: "Compétences",
                 python: "Python",
                 javascript: "JavaScript",
+                html: "HTML",
+                css: "CSS",
                 flutter: "Flutter",
                 courses: "Cours",
                 webdev: "Développement web",
-                webdesc: "Devenez un développeur web Front-End en réalisant divers projets pour votre portfolio - devenez un pro du HTML, CSS et JavaScript !<br>6 leçons par mois<br>Prix : 850",
+                webdesc: "Devenez un développeur web Front-End en réalisant divers projets pour votre portfolio - devenez un pro du HTML, CSS et JavaScript !<br>6 leçons par mois<br>Prix : 1000",
                 pythoncourse: "Python",
-                pydesc: "Apprenez tout sur Python de A à Z, des bases aux sujets avancés comme l'interface graphique Python, l'analyse de données Python, et plus encore !<br>6 leçons par mois<br>Prix : 750",
+                pydesc: "Apprenez tout sur Python de A à Z, des bases aux sujets avancés comme l'interface graphique Python, l'analyse de données Python, et plus encore !<br>6 leçons par mois<br>Prix : 850",
                 aicourse: "Cours d'Intelligence Artificielle (IA)",
                 aidesc: "Les cours d'IA enseignent la simulation par machine des processus d'intelligence humaine. Explorer l'IA est crucial pour construire des systèmes et applications intelligents et est important pour les développeurs, chercheurs et toute personne intéressée par les technologies de pointe.<br>6 leçons par mois<br>Prix : 650",
                 scratch: "Scratch",
-                scratchdesc: "Scratch est un langage de programmation visuel où vous glissez-déposez des blocs de code pour créer des histoires interactives, des jeux et des animations. Il est conçu pour enseigner les bases de la programmation et la pensée informatique de manière ludique et accessible. Les cours Scratch couvrent généralement l'interface, les concepts de programmation de base comme les boucles et les conditions, et la création de projets, favorisant la créativité et les compétences en résolution de problèmes.<br>6 leçons par mois<br>Prix : 650",
-                apply: "Postuler maintenant"
+                scratchdesc: "Scratch est un langage de programmation visuel où vous glissez-déposez des blocs de code pour créer des histoires interactives, des jeux et des animations. Il est conçu pour enseigner les bases de la programmation et la pensée informatique de manière ludique et accessible. Les cours Scratch couvrent généralement l'interface, les concepts de programmation de base comme les boucles et les conditions, et la création de projets, favorisant la créativité et les compétences en résolution de problèmes.<br>6 leçons par mois<br>Prix : 750",
+                thunkable: "Thunkable",
+                thunkabledesc: "Thunkable est une plateforme sans code qui permet aux utilisateurs de créer des applications mobiles natives pour Android et iOS, ainsi que des applications web, sans écrire de code. Elle utilise une interface glisser-déposer où les utilisateurs peuvent assembler visuellement des composants d'application et définir leur logique à l'aide d'un système de programmation par blocs, similaire à Scratch.<br>6 leçons par mois<br>Prix : 800",
+                blockly: "Blockly",
+                blocklydesc: "Blockly Games est une série de jeux éducatifs gratuits conçus par Google pour enseigner les principes de la programmation informatique à travers un langage de programmation visuel et basé sur des blocs appelé Blockly. Il est spécifiquement destiné aux débutants, y compris les enfants, qui n'ont aucune expérience préalable en codage.<br>6 leçons par mois<br>Prix : 700",
+                apply: "Postuler maintenant",
+                copyright: "© 2025 Académie Polaris. Tous droits réservés."
             },
             ar: {
+                title: "أكاديمية بولاريس",
+                subtitle: "مبرمج | مطور | متحمس للتكنولوجيا",
+                english: "الإنجليزية",
+                french: "الفرنسية",
+                arabic: "العربية",
+                about_nav: "حول",
+                skills_nav: "المهارات",
+                courses_nav: "الدورات",
+                about_me: "حول",
                 about1: "مارك يعقوب هي مطورة تطبيقات الويب والهواتف المحمولة مع خبرة واسعة في مجموعة متنوعة من التقنيات الحديثة، بما في ذلك:",
-                skill1: "HTML و CSS: تمتلك مارك مهارات متقدمة في تصميم وتطوير واجهات المستخدم باستخدام HTML و CSS، مما يمكنها من إنشاء مواقع ويب جذابة وسهلة الاستخدام.",
-                skill2: "JavaScript: مارك بارعة في JavaScript، مما يسمح لها بإضافة التفاعل والوظائف المتقدمة إلى مواقع الويب وتطبيقات الويب.",
-                skill3: "Flutter: لديها خبرة في تطوير تطبيقات الهاتف المحمول متعددة المنصات باستخدام Flutter، مما يمكنها من إنشاء تطبيقات تعمل بسلاسة على أنظمة التشغيل iOS و Android.",
+                htmlcss: "HTML و CSS:",
+                skill1_text: "تمتلك مارك مهارات متقدمة في تصميم وتطوير واجهات المستخدم باستخدام HTML و CSS، مما يمكنها من إنشاء مواقع ويب جذابة وسهلة الاستخدام.",
+                javascript: "جافا سكريبت:",
+                skill2_text: "مارك بارعة في JavaScript، مما يسمح لها بإضافة التفاعل والوظائف المتقدمة إلى مواقع الويب وتطبيقات الويب.",
+                flutter: "فلتر:",
+                skill3_text: "لديها خبرة في تطوير تطبيقات الهاتف المحمول متعددة المنصات باستخدام Flutter، مما يمكنها من إنشاء تطبيقات تعمل بسلاسة على أنظمة التشغيل iOS و Android.",
                 about2: "بشكل عام، مارك يعقوب هي مبرمجة ماهرة ومتعددة الاستخدامات، قادرة على تطوير حلول برمجية متكاملة تلبي احتياجات المستخدمين.",
                 skills: "المهارات",
                 python: "بايثون",
                 javascript: "جافا سكريبت",
-                flutter: "فلاتر",
+                html: "HTML",
+                css: "CSS",
+                flutter: "فلتر",
                 courses: "الدورات",
                 webdev: "تطوير الويب",
-                webdesc: "كن مطور ويب Front-End من خلال إكمال مجموعة متنوعة من المشاريع لملفك الشخصي - كن محترفًا في HTML و CSS و JavaScript!<br>6 دروس شهريًا<br>السعر: 850",
+                webdesc: "كن مطور ويب Front-End من خلال إكمال مجموعة متنوعة من المشاريع لملفك الشخصي - كن محترفًا في HTML و CSS و JavaScript!<br>6 دروس شهريًا<br>السعر: 1000",
                 pythoncourse: "بايثون",
-                pydesc: "تعلم كل شيء عن بايثون من الألف إلى الياء، من الأساسيات إلى الموضوعات المتقدمة مثل واجهة المستخدم الرسومية لبايثون، تحليل البيانات بايثون، والمزيد!<br>6 دروس شهريًا<br>السعر: 750",
+                pydesc: "تعلم كل شيء عن بايثون من الألف إلى الياء، من الأساسيات إلى الموضوعات المتقدمة مثل واجهة المستخدم الرسومية لبايثون، تحليل البيانات بايثون، والمزيد!<br>6 دروس شهريًا<br>السعر: 850",
                 aicourse: "دورات الذكاء الاصطناعي (AI)",
                 aidesc: "تعلم دورات الذكاء الاصطناعي محاكاة الآلة لعمليات الذكاء البشري. يعد استكشاف الذكاء الاصطناعي أمرًا بالغ الأهمية لبناء أنظمة وتطبيقات ذكية وهو مهم للمطورين والباحثين وأي شخص مهتم بالتكنولوجيا المتطورة.<br>6 دروس شهريًا<br>السعر: 650",
                 scratch: "سكراتش",
-                scratchdesc: "سكراتش هو لغة برمجة مرئية حيث تقوم بسحب وإسقاط كتل الكود لإنشاء قصص تفاعلية وألعاب ورسوم متحركة. تم تصميمه لتعليم أساسيات البرمجة والتفكير الحسابي بطريقة ممتعة وسهلة. تغطي دورات سكراتش عادةً الواجهة، ومفاهيم البرمجة الأساسية مثل الحلقات والشروط، وإنشاء المشاريع، وتعزيز الإبداع ومهارات حل المشكلات.<br>6 دروس شهريًا<br>السعر: 650",
-                apply: "قدم الآن"
+                scratchdesc: "سكراتش هو لغة برمجة مرئية حيث تقوم بسحب وإسقاط كتل الكود لإنشاء قصص تفاعلية وألعاب ورسوم متحركة. تم تصميمه لتعليم أساسيات البرمجة والتفكير الحسابي بطريقة ممتعة وسهلة. تغطي دورات سكراتش عادةً الواجهة، ومفاهيم البرمجة الأساسية مثل الحلقات والشروط، وإنشاء المشاريع، وتعزيز الإبداع ومهارات حل المشكلات.<br>6 دروس شهريًا<br>السعر: 750",
+                thunkable: "ثونكابل",
+                thunkabledesc: "ثونكابل هو منصة بدون كود تتيح للمستخدمين إنشاء تطبيقات محمولة أصلية لكل من Android و iOS، بالإضافة إلى تطبيقات الويب، دون كتابة أي كود. يستخدم واجهة سحب وإفلات حيث يمكن للمستخدمين تجميع مكونات التطبيق مرئيًا وتحديد منطقهم باستخدام نظام برمجة قائم على الكتل، مشابه لـ Scratch.<br>6 دروس شهريًا<br>السعر: 800",
+                blockly: "بلاكلي",
+                blocklydesc: "ألعاب بلاكلي هي سلسلة من الألعاب التعليمية المجانية المصممة من قبل جوجل لتعليم مبادئ برمجة الكمبيوتر من خلال لغة برمجة مرئية قائمة على الكتل تسمى بلاكلي. وهي موجهة خصيصًا للمبتدئين، بما في ذلك الأطفال، الذين ليس لديهم خبرة سابقة في البرمجة.<br>6 دروس شهريًا<br>السعر: 700",
+                apply: "قدم الآن",
+                copyright: "© 2025 أكاديمية بولاريس. جميع الحقوق محفوظة."
             }
         };
 
@@ -233,15 +309,15 @@
                 document.querySelectorAll('.language-btn').forEach(b => {
                     b.classList.remove('active');
                 });
-                
+               
                 // Add active class to clicked button
                 this.classList.add('active');
-                
+               
                 // Translate page
                 const lang = this.getAttribute('data-lang');
                 translatePage(lang);
             });
-            
+           
             // Add hover effects
             btn.addEventListener('mouseenter', function() {
                 if (!this.classList.contains('active')) {
@@ -249,7 +325,7 @@
                     this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
                 }
             });
-            
+           
             btn.addEventListener('mouseleave', function() {
                 if (!this.classList.contains('active')) {
                     this.style.transform = '';
@@ -259,6 +335,13 @@
         });
 
         function translatePage(lang) {
+            // Set direction for Arabic
+            if (lang === 'ar') {
+                document.body.setAttribute('dir', 'rtl');
+            } else {
+                document.body.setAttribute('dir', 'ltr');
+            }
+            
             document.querySelectorAll('.translatable').forEach(element => {
                 const key = element.getAttribute('data-key');
                 if (translations[lang] && translations[lang][key]) {
